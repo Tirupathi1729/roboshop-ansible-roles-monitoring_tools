@@ -4,7 +4,7 @@ groups:
       - alert: intanceDown
         expr: up==0
         for: 1m
-        lables:
+        labels:
           severity: critical
         annotations:
           summary: InstanceDown
