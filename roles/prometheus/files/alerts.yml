@@ -1,0 +1,10 @@
+groups:
+  - name: ec2
+    rules:
+      - alert: intanceDown
+        expr: up==0
+        for: 1m
+        lables:
+          severity: critical
+        annotations:
+          summary: InstanceDown
