@@ -49,6 +49,6 @@
 
 - name: Restart prometheus exporter service
   ansible.builtin.systemd:
-    name: nginx_exporter
+    name: nginx-exporter
     state: restarted
     enabled: yes
