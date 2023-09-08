@@ -5,7 +5,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/opt/nginx_exporter/nginx_prometheus_exporter -nginx.scrape-uri=http://localhost:80/health
+ExecStart=/opt/nginx_exporter/nginx-prometheus-exporter -nginx.scrape-uri=http://localhost:80/health
 
 [Install]
 WantedBy=multi-user.target
