@@ -45,7 +45,7 @@
 - name: Copy Nginx prometheus exporter service
   ansible.builtin.copy:
     src: nginx-exporter.service
-    dest: /etc/systemd/system/nginx_exporter.service
+    dest: /etc/systemd/system/nginx-exporter.service
 
 - name: Restart prometheus exporter service
   ansible.builtin.systemd:
