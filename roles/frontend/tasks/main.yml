@@ -3,10 +3,15 @@
     name: nginx
     state: installed
 
-- name: Copy Roboshop Configuration
+- name: Copy Roboshop Configuration-project config
   ansible.builtin.copy:
     src: nginx-roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
+
+- name: Copy Roboshop Configuration-main config
+  ansible.builtin.copy:
+    src: nginx.conf
+    dest: /etc/ngin/nginx.conf
 
 - name: clean old content
   ansible.builtin.file:
@@ -52,3 +57,8 @@
     name: nginx_exporter
     state: restarted
     enabled: yes
+
+- name: filebeat setup
+  ansible.builtin.import_roles:
+    name: elk
+    tasks_from: filebeat
